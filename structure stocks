@@ -1,0 +1,8 @@
+mat <- read.csv(file="I:/New Project/Stocks/akcie_diff.csv",head=TRUE,sep=",")
+
+library(tseries)
+library(changepoint)
+
+mat2 <- t(mat)
+
+multiple.mean.cusum(mat2,mul.method="SegNeigh",penalty="None",Q=10,class=FALSE) 
